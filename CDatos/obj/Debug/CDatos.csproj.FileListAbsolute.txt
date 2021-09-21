@@ -1,0 +1,7 @@
+C:\Users\Pc_activa\source\repos\TentativoPacientesSisaySanguano\CDatos\bin\Debug\CDatos.dll.config
+C:\Users\Pc_activa\source\repos\TentativoPacientesSisaySanguano\CDatos\bin\Debug\CDatos.dll
+C:\Users\Pc_activa\source\repos\TentativoPacientesSisaySanguano\CDatos\bin\Debug\CDatos.pdb
+C:\Users\Pc_activa\source\repos\TentativoPacientesSisaySanguano\CDatos\obj\Debug\CDatos.csproj.AssemblyReference.cache
+C:\Users\Pc_activa\source\repos\TentativoPacientesSisaySanguano\CDatos\obj\Debug\CDatos.csproj.CoreCompileInputs.cache
+C:\Users\Pc_activa\source\repos\TentativoPacientesSisaySanguano\CDatos\obj\Debug\CDatos.dll
+C:\Users\Pc_activa\source\repos\TentativoPacientesSisaySanguano\CDatos\obj\Debug\CDatos.pdb

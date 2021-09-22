@@ -30,27 +30,35 @@ namespace CPresentacion
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvPrimeraConsulta = new System.Windows.Forms.DataGridView();
             this.lblConsultas = new System.Windows.Forms.Label();
             this.btnConsultarMedico = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrimeraConsulta)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(194)))));
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvPrimeraConsulta);
             this.panel1.Location = new System.Drawing.Point(41, 95);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(548, 252);
             this.panel1.TabIndex = 0;
             // 
+            // dgvPrimeraConsulta
+            // 
+            this.dgvPrimeraConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPrimeraConsulta.Location = new System.Drawing.Point(25, 28);
+            this.dgvPrimeraConsulta.Name = "dgvPrimeraConsulta";
+            this.dgvPrimeraConsulta.Size = new System.Drawing.Size(500, 190);
+            this.dgvPrimeraConsulta.TabIndex = 0;
+            // 
             // lblConsultas
             // 
             this.lblConsultas.AutoSize = true;
             this.lblConsultas.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConsultas.Location = new System.Drawing.Point(37, 41);
+            this.lblConsultas.Location = new System.Drawing.Point(47, 41);
             this.lblConsultas.Name = "lblConsultas";
             this.lblConsultas.Size = new System.Drawing.Size(377, 23);
             this.lblConsultas.TabIndex = 24;
@@ -65,14 +73,7 @@ namespace CPresentacion
             this.btnConsultarMedico.TabIndex = 25;
             this.btnConsultarMedico.Text = "Consultar";
             this.btnConsultarMedico.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(44, 25);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(464, 169);
-            this.dataGridView1.TabIndex = 0;
+            this.btnConsultarMedico.Click += new System.EventHandler(this.btnConsultarMedico_Click);
             // 
             // FrmConsultaMedicos
             // 
@@ -84,8 +85,9 @@ namespace CPresentacion
             this.Controls.Add(this.panel1);
             this.Name = "FrmConsultaMedicos";
             this.Text = "FrmConsultaMedicos";
+            this.Load += new System.EventHandler(this.FrmConsultaMedicos_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrimeraConsulta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,7 +97,7 @@ namespace CPresentacion
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblConsultas;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPrimeraConsulta;
         private System.Windows.Forms.Button btnConsultarMedico;
     }
 }

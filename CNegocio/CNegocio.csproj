@@ -43,6 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="CN_Doctor.cs" />
+    <Compile Include="CN_Especialidad.cs" />
+    <Compile Include="CN_Medico_Especialidad.cs" />
     <Compile Include="CN_Paciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

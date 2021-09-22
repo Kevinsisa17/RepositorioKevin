@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -127,6 +128,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\clinica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CConsultas_Solicitadas\CConsultas_Solicitadas.csproj">
+      <Project>{465bdbd0-df3c-4b6d-8733-eb190664c77a}</Project>
+      <Name>CConsultas_Solicitadas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CDatos\CDatos.csproj">
+      <Project>{a8977eb9-a775-4e27-8ea6-c8a1fc16841a}</Project>
+      <Name>CDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CNegocio\CNegocio.csproj">
+      <Project>{50e1a495-b9a5-4730-9802-7ab74602232c}</Project>
+      <Name>CNegocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

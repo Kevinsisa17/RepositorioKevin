@@ -1,0 +1,12 @@
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CConsultas_Solicitadas\bin\Debug\CConsultas_Solicitadas.dll
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CConsultas_Solicitadas\bin\Debug\CConsultas_Solicitadas.pdb
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CConsultas_Solicitadas\bin\Debug\CDatos.dll
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CConsultas_Solicitadas\bin\Debug\CNegocio.dll
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CConsultas_Solicitadas\bin\Debug\CDatos.pdb
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CConsultas_Solicitadas\bin\Debug\CDatos.dll.config
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CConsultas_Solicitadas\bin\Debug\CNegocio.pdb
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CConsultas_Solicitadas\obj\Debug\CConsultas_Solicitadas.csproj.AssemblyReference.cache
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CConsultas_Solicitadas\obj\Debug\CConsultas_Solicitadas.csproj.CoreCompileInputs.cache
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CConsultas_Solicitadas\obj\Debug\CConsultas_Solicitadas.csproj.CopyComplete
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CConsultas_Solicitadas\obj\Debug\CConsultas_Solicitadas.dll
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CConsultas_Solicitadas\obj\Debug\CConsultas_Solicitadas.pdb

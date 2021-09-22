@@ -32,5 +32,15 @@ namespace CDatos.Properties {
                 return ((string)(this["ClinicaGPVConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=ANGEL;Initial Catalog=ClinicaGPV;Integrated Security=True")]
+        public string ClinicaGPVConnectionString1 {
+            get {
+                return ((string)(this["ClinicaGPVConnectionString1"]));
+            }
+        }
     }
 }

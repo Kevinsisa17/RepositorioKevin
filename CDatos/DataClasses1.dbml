@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ClinicaGPV" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ANGEL;Initial Catalog=ClinicaGPV;Integrated Security=True" SettingsObjectName="CDatos.Properties.Settings" SettingsPropertyName="ClinicaGPVConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Especialidades" Member="Especialidades">
+    <Type Name="Especialidades">
+      <Column Name="EspecialidadId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Especialidad" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Especialidades_MedicosEspecialidades" Member="MedicosEspecialidades" ThisKey="EspecialidadId" OtherKey="EspecialidadId" Type="MedicosEspecialidades" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ingresos" Member="Ingresos">
+    <Type Name="Ingresos">
+      <Column Name="NumIngreso" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PacienteId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Habitacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cama" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaIngreso" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Pacientes_Ingresos" Member="Pacientes" ThisKey="PacienteId" OtherKey="PacienteId" Type="Pacientes" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Medicos" Member="Medicos">
+    <Type Name="Medicos">
+      <Column Name="MedicoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Association Name="Medicos_MedicosEspecialidades" Member="MedicosEspecialidades" ThisKey="MedicoId" OtherKey="MedicoId" Type="MedicosEspecialidades" />
+      <Association Name="Medicos_Visitas" Member="Visitas" ThisKey="MedicoId" OtherKey="MedicoId" Type="Visitas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MedicosEspecialidades" Member="MedicosEspecialidades">
+    <Type Name="MedicosEspecialidades">
+      <Column Name="MedicosEspecialidadesId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EspecialidadId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MedicoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Especialidades_MedicosEspecialidades" Member="Especialidades" ThisKey="EspecialidadId" OtherKey="EspecialidadId" Type="Especialidades" IsForeignKey="true" />
+      <Association Name="Medicos_MedicosEspecialidades" Member="Medicos" ThisKey="MedicoId" OtherKey="MedicoId" Type="Medicos" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pacientes" Member="Pacientes">
+    <Type Name="Pacientes">
+      <Column Name="PacienteId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoPostal" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Provincia" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Association Name="Pacientes_Ingresos" Member="Ingresos" ThisKey="PacienteId" OtherKey="PacienteId" Type="Ingresos" />
+      <Association Name="Pacientes_Visitas" Member="Visitas" ThisKey="PacienteId" OtherKey="PacienteId" Type="Visitas" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Visitas" Member="Visitas">
+    <Type Name="Visitas">
+      <Column Name="NumVisita" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PacienteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MedicoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Diagnostico" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tratamiento" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="Medicos_Visitas" Member="Medicos" ThisKey="MedicoId" OtherKey="MedicoId" Type="Medicos" IsForeignKey="true" />
+      <Association Name="Pacientes_Visitas" Member="Pacientes" ThisKey="PacienteId" OtherKey="PacienteId" Type="Pacientes" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.primera_consulta" Member="primera_consulta">
+    <Type Name="primera_consulta">
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NumEspec" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.segunda_consulta" Member="segunda_consulta">
+    <Type Name="segunda_consulta">
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NumIngresos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tercera_consulta" Member="tercera_consulta">
+    <Type Name="tercera_consulta">
+      <Column Name="PacienteId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoPostal" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Provincia" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="FechaNacimiento" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.cuarta_consulta" Member="cuarta_consulta">
+    <Type Name="cuarta_consulta">
+      <Column Name="PacienteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.ingresar_paciente" Method="ingresar_paciente">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="apellido" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="direccion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="codigo_postal" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="provincia" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="telefono" Type="System.String" DbType="VarChar(12)" />
+    <Parameter Name="fecha_nacimiento" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ingreso_especialidades" Method="ingreso_especialidades">
+    <Parameter Name="especialidad" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ingreso_medico_especialidades" Method="ingreso_medico_especialidades">
+    <Parameter Name="especialidades_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="medico_id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ingreso_medicos" Method="ingreso_medicos">
+    <Parameter Name="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="apellidos" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="telefono" Type="System.String" DbType="VarChar(12)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.registrar_visita" Method="registrar_visita">
+    <Parameter Name="paciente_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="medico_id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="fecha" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="diagnostico" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="tratamiento" Type="System.String" DbType="VarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.registro_ingreso" Method="registro_ingreso">
+    <Parameter Name="paciente_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="habitacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cama" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="fecha_ingreso" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.quinta_consulta" Method="quinta_consulta">
+    <ElementType Name="quinta_consultaResult">
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tratamiento" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

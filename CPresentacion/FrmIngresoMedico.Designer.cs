@@ -29,6 +29,7 @@ namespace CPresentacion
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnGuardarMedico = new System.Windows.Forms.Button();
             this.lblTelefono = new System.Windows.Forms.Label();
@@ -41,13 +42,20 @@ namespace CPresentacion
             this.btnEditarMedico = new System.Windows.Forms.Button();
             this.btnEliminarMedico = new System.Windows.Forms.Button();
             this.dgvMedico = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbEspecialidades = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ttEleccionEspecialidad = new System.Windows.Forms.ToolTip(this.components);
+            this.bnespecialidad = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedico)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(194)))));
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.btnGuardarMedico);
             this.panel1.Controls.Add(this.lblTelefono);
             this.panel1.Controls.Add(this.lblNombre);
@@ -55,20 +63,21 @@ namespace CPresentacion
             this.panel1.Controls.Add(this.lblApellido);
             this.panel1.Controls.Add(this.txtNombre);
             this.panel1.Controls.Add(this.mtbTelefono);
-            this.panel1.Location = new System.Drawing.Point(63, 44);
+            this.panel1.Location = new System.Drawing.Point(12, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(399, 134);
+            this.panel1.Size = new System.Drawing.Size(507, 172);
             this.panel1.TabIndex = 21;
             // 
             // btnGuardarMedico
             // 
             this.btnGuardarMedico.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
-            this.btnGuardarMedico.Location = new System.Drawing.Point(287, 48);
+            this.btnGuardarMedico.Location = new System.Drawing.Point(102, 125);
             this.btnGuardarMedico.Name = "btnGuardarMedico";
             this.btnGuardarMedico.Size = new System.Drawing.Size(86, 33);
             this.btnGuardarMedico.TabIndex = 20;
             this.btnGuardarMedico.Text = "Guardar";
             this.btnGuardarMedico.UseVisualStyleBackColor = true;
+            this.btnGuardarMedico.Click += new System.EventHandler(this.btnGuardarMedico_Click);
             // 
             // lblTelefono
             // 
@@ -120,7 +129,7 @@ namespace CPresentacion
             // mtbTelefono
             // 
             this.mtbTelefono.Location = new System.Drawing.Point(161, 89);
-            this.mtbTelefono.Mask = "\\0\\999999999";
+            this.mtbTelefono.Mask = "999999999";
             this.mtbTelefono.Name = "mtbTelefono";
             this.mtbTelefono.Size = new System.Drawing.Size(100, 20);
             this.mtbTelefono.TabIndex = 11;
@@ -129,7 +138,7 @@ namespace CPresentacion
             // 
             this.lblMedico.AutoSize = true;
             this.lblMedico.Font = new System.Drawing.Font("Georgia", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMedico.Location = new System.Drawing.Point(153, 18);
+            this.lblMedico.Location = new System.Drawing.Point(161, 9);
             this.lblMedico.Name = "lblMedico";
             this.lblMedico.Size = new System.Drawing.Size(200, 23);
             this.lblMedico.TabIndex = 22;
@@ -138,30 +147,79 @@ namespace CPresentacion
             // btnEditarMedico
             // 
             this.btnEditarMedico.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
-            this.btnEditarMedico.Location = new System.Drawing.Point(403, 223);
+            this.btnEditarMedico.Location = new System.Drawing.Point(433, 255);
             this.btnEditarMedico.Name = "btnEditarMedico";
             this.btnEditarMedico.Size = new System.Drawing.Size(86, 33);
             this.btnEditarMedico.TabIndex = 24;
             this.btnEditarMedico.Text = "Editar";
             this.btnEditarMedico.UseVisualStyleBackColor = true;
+            this.btnEditarMedico.Click += new System.EventHandler(this.btnEditarMedico_Click);
             // 
             // btnEliminarMedico
             // 
             this.btnEliminarMedico.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
-            this.btnEliminarMedico.Location = new System.Drawing.Point(403, 281);
+            this.btnEliminarMedico.Location = new System.Drawing.Point(433, 315);
             this.btnEliminarMedico.Name = "btnEliminarMedico";
             this.btnEliminarMedico.Size = new System.Drawing.Size(86, 33);
             this.btnEliminarMedico.TabIndex = 25;
             this.btnEliminarMedico.Text = "Eliminar";
             this.btnEliminarMedico.UseVisualStyleBackColor = true;
+            this.btnEliminarMedico.Click += new System.EventHandler(this.btnEliminarMedico_Click);
             // 
             // dgvMedico
             // 
             this.dgvMedico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMedico.Location = new System.Drawing.Point(22, 195);
+            this.dgvMedico.Location = new System.Drawing.Point(12, 213);
             this.dgvMedico.Name = "dgvMedico";
-            this.dgvMedico.Size = new System.Drawing.Size(360, 182);
+            this.dgvMedico.Size = new System.Drawing.Size(403, 182);
             this.dgvMedico.TabIndex = 26;
+            this.dgvMedico.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvMedico_CellMouseClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Georgia", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(23, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 18);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Especialidad:";
+            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
+            // 
+            // cbEspecialidades
+            // 
+            this.cbEspecialidades.FormattingEnabled = true;
+            this.cbEspecialidades.Location = new System.Drawing.Point(26, 61);
+            this.cbEspecialidades.Name = "cbEspecialidades";
+            this.cbEspecialidades.Size = new System.Drawing.Size(121, 21);
+            this.cbEspecialidades.TabIndex = 19;
+            this.cbEspecialidades.SelectedIndexChanged += new System.EventHandler(this.cbEspecialidades_SelectedIndexChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.bnespecialidad);
+            this.groupBox1.Controls.Add(this.cbEspecialidades);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox1.Location = new System.Drawing.Point(321, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(168, 146);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ingreso Especialidad";
+            // 
+            // bnespecialidad
+            // 
+            this.bnespecialidad.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Bold);
+            this.bnespecialidad.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.bnespecialidad.Location = new System.Drawing.Point(48, 97);
+            this.bnespecialidad.Name = "bnespecialidad";
+            this.bnespecialidad.Size = new System.Drawing.Size(86, 33);
+            this.bnespecialidad.TabIndex = 22;
+            this.bnespecialidad.Text = "Guardar";
+            this.bnespecialidad.UseVisualStyleBackColor = true;
+            this.bnespecialidad.Click += new System.EventHandler(this.bnespecialidad_Click);
             // 
             // FrmIngresoMedico
             // 
@@ -175,9 +233,12 @@ namespace CPresentacion
             this.Controls.Add(this.panel1);
             this.Name = "FrmIngresoMedico";
             this.Text = "FrmIngresoMedico";
+            this.Load += new System.EventHandler(this.FrmIngresoMedico_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedico)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +258,10 @@ namespace CPresentacion
         private System.Windows.Forms.Button btnEditarMedico;
         private System.Windows.Forms.Button btnEliminarMedico;
         private System.Windows.Forms.DataGridView dgvMedico;
+        private System.Windows.Forms.ComboBox cbEspecialidades;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ToolTip ttEleccionEspecialidad;
+        private System.Windows.Forms.Button bnespecialidad;
     }
 }

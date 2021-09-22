@@ -1,0 +1,10 @@
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CNegocio\bin\Debug\CNegocio.dll
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CNegocio\bin\Debug\CNegocio.pdb
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CNegocio\bin\Debug\CDatos.dll
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CNegocio\bin\Debug\CDatos.pdb
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CNegocio\bin\Debug\CDatos.dll.config
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CNegocio\obj\Debug\CNegocio.csproj.AssemblyReference.cache
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CNegocio\obj\Debug\CNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CNegocio\obj\Debug\CNegocio.csproj.CopyComplete
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CNegocio\obj\Debug\CNegocio.dll
+C:\Users\Luis Sanguano\source\repos\TentativoPacientesSisaySanguano\CNegocio\obj\Debug\CNegocio.pdb
